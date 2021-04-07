@@ -4,6 +4,7 @@ const path = require('path')
 const hbs = require('hbs')
 const fetch_weather = require('./fetch-weather')
 
+const port = process.env.PORT || 3000
 // Define paths
 const publicPath = path.join(__dirname, 'public')
 const viewsPath = path.join(__dirname, 'templates/views')
@@ -40,6 +41,6 @@ app.get('*', (req, res)=>{
 })
 
 
-app.listen(3000, ()=>{
-    console.log('listening to the server....')
+app.listen(port, ()=>{
+    console.log('listening to the server.... on port' + port)
 })

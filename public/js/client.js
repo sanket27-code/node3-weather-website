@@ -10,7 +10,7 @@ contentTwo.textContent = ''
 
 form.addEventListener('submit', (e)=>{
     e.preventDefault()
-    fetch('http://localhost:3000/weather?address='+address.value).then((response)=>{
+    fetch('/weather?address='+address.value).then((response)=>{
         response.json().then((data)=>{
             if(data.err){
                 contentOne.textContent = data.err
@@ -23,6 +23,6 @@ form.addEventListener('submit', (e)=>{
             }
         })
         
-        
+
     })
 })
