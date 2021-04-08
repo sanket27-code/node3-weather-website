@@ -10,6 +10,9 @@ contentTwo.textContent = ''
 
 form.addEventListener('submit', (e)=>{
     e.preventDefault()
+    contentOne.textContent = 'Loading...'
+    contentOne.style.color = 'green'   
+    contentTwo.textContent = ''
     fetch('/weather?address='+address.value).then((response)=>{
         response.json().then((data)=>{
             if(data.err){
